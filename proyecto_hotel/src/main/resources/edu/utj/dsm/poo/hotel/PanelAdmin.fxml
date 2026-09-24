@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="edu.utj.dsm.poo.hotel.PanelAdminController">
+   <children>
+      <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" AnchorPane.rightAnchor="0.0">
+         <top>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="lblNombreHotel" prefHeight="32.0" prefWidth="248.0" text="Nombre del Hotel">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblUsuarioActual" prefHeight="36.0" prefWidth="182.0" text="Usuario actual">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnCerrarSesion" mnemonicParsing="false" text="Cerrar Sesión" />
+               </children>
+            </HBox>
+         </top>
+         <left>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="btnInicio" mnemonicParsing="false" text="nicio / Dashboard" />
+                  <Button fx:id="btnUsuarios" mnemonicParsing="false" text="Usuarios y Roles" />
+                  <Button fx:id="btnConfiguracion" mnemonicParsing="false" prefHeight="28.0" prefWidth="100.0" text="Configuración Hotel" />
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <VBox fx:id="panelCentral" prefHeight="102.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="472.0" spacing="15.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="lblReservasDia" text="Reservas del Día" />
+                              <Label text="12" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Hab. Libres" />
+                              <Label fx:id="lblHabitacionesLibres" text="18 / 30" />
+                           </children>
+                        </VBox>
+                        <VBox fx:id="lblUsuariosConectados" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Usuarios Conectados" />
+                              <Label text="4" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="tblActividad" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="colFechaHora" prefWidth="75.0" text="Fecha y Hora" />
+                      <TableColumn fx:id="colUsuario" prefWidth="75.0" text="Usuario" />
+                        <TableColumn fx:id="colAccion" prefWidth="75.0" text="Acción Realizada" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
