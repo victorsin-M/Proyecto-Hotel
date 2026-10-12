@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="520.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utj.dsm.poo.hotel.GestionEmpleadosController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="58.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Gestión de Empleados">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </HBox>
+   </top>
+   <left>
+      <GridPane hgap="8.0" vgap="6.0" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="110.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="170.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="110.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Nombre:" />
+            <TextField fx:id="txtNombre" GridPane.columnIndex="1" />
+            <Label text="Primer apellido:" GridPane.rowIndex="1" />
+            <TextField fx:id="txtPrimerApellido" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Segundo apellido:" GridPane.rowIndex="2" />
+            <TextField fx:id="txtSegundoApellido" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Nacimiento:" GridPane.rowIndex="3" />
+            <DatePicker fx:id="dpNacimiento" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Correo:" GridPane.rowIndex="4" />
+            <TextField fx:id="txtEmail" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Teléfono:" GridPane.rowIndex="5" />
+            <TextField fx:id="txtTelefono" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="RFC:" GridPane.rowIndex="6" />
+            <TextField fx:id="txtRfc" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="Usuario:" GridPane.rowIndex="7" />
+            <TextField fx:id="txtUsuario" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label text="Contraseña:" GridPane.rowIndex="8" />
+            <PasswordField fx:id="pwdContrasena" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label text="Elige Rol:" GridPane.rowIndex="9" />
+            <ComboBox fx:id="cbRol" prefWidth="170.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Button fx:id="btnImagen" mnemonicParsing="false" onAction="#seleccionarImagen" text="Elegir imagen" GridPane.rowIndex="10" />
+            <ImageView fx:id="imgEmpleado" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </GridPane>
+   </left>
+   <center>
+      <TableView fx:id="tblEmpleados" prefHeight="400.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <columns>
+            <TableColumn fx:id="colNombre" prefWidth="90.0" text="Nombre" />
+            <TableColumn fx:id="colApellido" prefWidth="90.0" text="Apellido" />
+            <TableColumn fx:id="colUsuario" prefWidth="80.0" text="Usuario" />
+            <TableColumn fx:id="colRol" prefWidth="95.0" text="Rol" />
+            <TableColumn fx:id="colCorreo" prefWidth="130.0" text="Correo" />
+            <TableColumn fx:id="colTelefono" prefWidth="90.0" text="Teléfono" />
+            <TableColumn fx:id="colRfc" prefWidth="100.0" text="RFC" />
+         </columns>
+      </TableView>
+   </center>
+   <bottom>
+      <HBox spacing="8.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#guardarEmpleado" text="Guardar" />
+            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#limpiarCampos" text="Cancelar" />
+            <Button fx:id="btnLimpiar" mnemonicParsing="false" onAction="#limpiarCampos" text="Nuevo / Limpiar" />
+            <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#editarEmpleado" text="Editar / Actualizar" />
+            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminarEmpleado" text="Eliminar" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane>
