@@ -77,6 +77,27 @@ public final class Validaciones {
         }
         return null;
     }
+    
+    
+public static String contrasenaSegura(String texto) {
+    if (vacio(texto)) {
+        return "Este campo es obligatorio";
+    }
+    if (texto.length() < 8) {
+        return "Debe tener al menos 8 caracteres";
+    }
+    if (!texto.matches(".*[A-Z].*")) {
+        return "Debe incluir al menos una mayúscula";
+    }
+    if (!texto.matches(".*[a-z].*")) {
+        return "Debe incluir al menos una minúscula";
+    }
+    if (!texto.matches(".*[0-9].*")) {
+        return "Debe incluir al menos un número";
+    }
+    return null;
+}
+
 
     public static String entero(String texto, int minimo) {
         if (vacio(texto)) {
